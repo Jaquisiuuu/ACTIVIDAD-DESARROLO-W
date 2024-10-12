@@ -1,0 +1,750 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans';
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+}
+
+
+header {
+    background: url(img/encabezado.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}
+
+
+
+header h1 {
+    text-align: center;
+    font-size: 50px;
+    color: #000000;
+    padding: 30px 0;
+    transform: translateY(50%);
+}
+
+body {
+    overflow-x: hidden; 
+}
+
+.contenedor {
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px; 
+
+}
+
+.contenedor .contenedor-items {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    width: 100%;
+    overflow: hidden; 
+    transition: .3s;
+
+}
+
+
+.contenedor .contenedor-items .item {
+    width: 100%; 
+    margin: auto;
+    border: 1px solid #666;
+    border-radius: 10px;
+    padding: 20px;
+    transition: .3s;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos dentro se apilen verticalmente */
+    justify-content: space-between; 
+
+}
+
+
+.contenedor .contenedor-items .item .img-item {
+    width: 100%;
+    height: 200px; /* Establece una altura fija para todas las imágenes */
+    object-fit: cover; 
+
+}
+
+
+.contenedor .contenedor-items .item:hover {
+    box-shadow: 0 0 10px #666;
+    scale: 1.05;
+}
+
+.contenedor .contenedor-items .item .titulo-item {
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+.contenedor .contenedor-items .item .precio-item {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.contenedor .contenedor-items .item .boton-item {
+    display: block;
+    margin: 10px auto;
+    border: none;
+    background-color: rgb(115, 37, 37);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+/* seccion carrito */
+
+.carrito {
+
+    border: 1px solid #666;
+
+    width: 35%;
+
+    margin-top: 30px;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    position: relative; /* Cambiado de sticky a relative */
+
+    transition: .3s;
+
+}
+
+
+
+.carrito .header-carrito {
+
+    background-color: #000;
+
+    color: #fff;
+
+    text-align: center;
+
+    padding: 20px 0; /* Ajuste en el padding */
+
+}
+
+
+
+.carrito .carrito-items {
+
+    padding: 10px; /* Espaciado interno */
+
+}
+
+
+
+.carrito .carrito-item {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between; /* Espacio entre elementos */
+
+    border-bottom: 1px solid #666;
+
+    padding: 10px; /* Reducción del padding */
+
+}
+
+
+
+.carrito .carrito-item img {
+
+    margin-right: 10px; /* Espaciado entre imagen y texto */
+
+    max-width: 50px; /* Tamaño de imagen ajustado */
+
+}
+
+
+
+.carrito .carrito-item .carrito-item-titulo {
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+}
+
+
+
+.carrito .carrito-item .selector-cantidad {
+
+    display: flex; /* Cambio a flex para mejor distribución */
+
+    align-items: center; /* Alineación vertical */
+
+    margin-right: 10px; /* Espacio a la derecha */
+
+}
+
+
+
+.carrito .carrito-item .carrito-item-cantidad {
+
+    border: 1px solid #666; /* Añadir borde para mejor visibilidad */
+
+    font-size: 18px;
+
+    width: 30px;
+
+    text-align: center;
+
+    margin: 0 5px; /* Espacio alrededor del input */
+
+}
+
+
+
+.carrito .carrito-item .selector-cantidad i {
+
+    font-size: 18px;
+
+    width: 32px;
+
+    height: 32px;
+
+    line-height: 32px;
+
+    text-align: center;
+
+    border-radius: 50%;
+
+    border: 1px solid #000;
+
+    cursor: pointer;
+
+}
+
+
+
+.carrito .carrito-item .carrito-item-precio {
+
+    font-weight: bold;
+
+    font-size: 18px;
+
+}
+
+
+
+.carrito .carrito-item .btn-eliminar {
+
+    color: #000;
+
+    font-size: 20px;
+
+    width: 40px;
+
+    height: 40px;
+
+    line-height: 40px;
+
+    text-align: center;
+
+    border-radius: 50%;
+
+    border: 1px solid #000;
+
+    cursor: pointer;
+
+    background: transparent;
+
+}
+
+
+
+.carrito-total {
+
+    background-color: #f3f3f3;
+
+    padding: 20px; /* Ajuste en el padding */
+
+}
+
+
+
+.carrito-total .fila {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.carrito-total .btn-pagar {
+
+    display: block;
+
+    width: 100%;
+
+    border: none;
+
+    background: #000;
+
+    color: #fff;
+
+    border-radius: 5px;
+
+    font-size: 18px;
+
+    padding: 15px; /* Ajuste en el padding */
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+
+.carrito-total .btn-pagar:hover {
+
+    scale: 1.05;
+
+}
+
+
+.footer {
+
+    background-color: #000; /* Fondo negro */
+
+    color: #fff; /* Texto blanco */
+
+    padding: 40px 20px; /* Espaciado superior e inferior */
+
+    position: relative; /* Para mantener el footer en su lugar */
+
+    bottom: 0; /* Mantiene el footer en la parte inferior */
+
+    width: 100%; /* Ocupa todo el ancho */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+
+
+.footer h4 {
+
+    margin-top: 0; /* Sin margen superior */
+
+}
+
+
+
+.footer a {
+
+    color: #fff; /* Enlaces en blanco */
+
+    text-decoration: none; /* Sin subrayado */
+
+}
+
+
+
+.footer a:hover {
+
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+
+}
+
+
+
+.container {
+
+    display: flex; /* Usar flexbox para el diseño */
+
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten */
+
+    justify-content: space-between; /* Espaciado entre secciones */
+
+}
+
+
+
+.footer .help-section, 
+
+.footer .links-section,
+
+.footer .customer-service,
+
+.footer .about-us,
+
+.footer .payment-methods { /* Agrega payment-methods aquí */
+
+    flex: 1; /* Cada sección ocupa igual espacio */
+
+    margin: 10px; /* Margen entre secciones */
+}
+
+.footer ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+.footer li {
+    margin: 5px 0; /* Espaciado entre elementos de lista */
+}
+
+.footer .payment-methods {
+    flex: 1; /* Igual que las otras secciones */
+    margin-top: 20px; /* Margen superior para separar del resto del contenido */
+
+}
+
+.footer .payment-methods ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+.footer .payment-methods li {
+    display: flex; /* Alineación de imagen y texto */
+    align-items: center; /* Centra verticalmente */
+    margin: 5px 0; /* Espaciado entre elementos de lista */
+
+}
+
+
+.footer .payment-methods img {
+    width: 24px; /* Ajusta el tamaño de las imágenes */
+    height: 24px; /* Mantén el tamaño cuadrado */
+    margin-right: 10px; /* Espacio entre imagen y texto */
+}
+
+
+
+#codigo-descuento, #puntos-lealtad {
+
+    border: 1px solid #000;  /* Borde negro para ver los inputs */
+
+    width: 50%;  /* Ajustar el ancho */
+
+    padding: 10px;  /* Añadir padding para mejor visibilidad */
+
+    margin: 10px 0;  /* Espacio entre los inputs */
+
+}
+
+/* Ajustes para responsividad */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 30px; /* Reduce el tamaño del texto */
+    }
+
+    .contenedor {
+        flex-direction: column; /* Cambia a columna en lugar de fila */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .carrito {
+        width: 100%; /* El carrito ocupa todo el ancho */
+    }
+}
+
+/* Ajustes para pantallas medianas (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 40px; /* Ajusta el tamaño del texto */
+    }
+
+    .contenedor {
+        flex-direction: row; /* Asegura que sea fila en tablets */
+    }
+
+    .carrito {
+        width: 50%; /* Ajusta el ancho del carrito */
+    }
+
+    .footer {
+        flex-direction: row; /* Mantiene el footer en fila */
+    }
+}
+
+.equipo {
+    padding: 40px 20px; /* Espaciado más amplio */
+    background-color: #f9f9f9; /* Color de fondo suave */
+    text-align: center; /* Centrar el texto */
+}
+
+.equipo h2 {
+    color: #333; /* Color del título */
+    margin-bottom: 30px; /* Espacio inferior */
+    font-size: 40px; /* Tamaño de fuente más grande */
+}
+
+.miembros-equipo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrar el contenido */
+}
+
+.miembro {
+    flex: 1 1 30%; /* Tres miembros por fila */
+    margin: 15px; /* Espacio entre miembros */
+    background-color: #fff; /* Fondo blanco para los miembros */
+    padding: 15px;
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.2s; /* Animación suave al pasar el ratón */
+}
+
+.miembro:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+}
+
+.foto-miembro {
+    width: 100%; /* Ajustar el ancho a 100% */
+    height: auto; /* Mantener la proporción de la imagen */
+    border-radius: 50%; /* Hacer las fotos redondas */
+    margin-bottom: 10px; /* Espacio debajo de la foto */
+}
+
+.miembro h3 {
+    color: #313234; /* Color azul para el nombre */
+    margin: 10px 0; /* Espacio vertical */
+}
+
+.miembro p {
+    color: #555; /* Color gris para la descripción */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+}
+
+.btn-ver-productos {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(115, 37, 37);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-left: -80px;
+}
+
+.btn-ver-productos:hover {
+    background-color: rgba(125, 52, 52, 0.771);
+}
+
+.quienes-somos {
+    padding: 40px 0; /* Espaciado superior e inferior */
+    background-color: #f9f9f9; /* Color de fondo para resaltar la sección */
+}
+
+.quienes-somos h2 {
+    text-align: center; /* Centrar el título */
+    font-size: 36px; /* Tamaño de la fuente */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+.quienes-somos-contenido {
+    max-width: 800px; /* Ancho máximo para el contenido */
+    margin: 0 auto; /* Centrar contenido */
+    padding: 20px; /* Espaciado interno */
+}
+
+.quienes-somos-contenido h3.subtitulo {
+    font-weight: bold; /* Negritas */
+    font-size: 28px; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
+    margin-top: 20px; /* Espacio superior */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+.quienes-somos-contenido p {
+    font-size: 18px; /* Tamaño de la fuente para el texto */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+    color: #555; /* Color del texto */
+}
+
+.footer-subscription {
+    padding: 20px;
+    background-image: url('img/sephora.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda el área */
+    background-position: center;
+    text-align: center;
+    color: #000000; /* Color del texto en blanco */
+}
+
+.footer-subscription h3 {
+    font-size: 40px; /* Tamaño grande */
+    font-weight: bold; /* Texto en negritas */
+    margin-bottom: 10px;
+}
+
+.footer-subscription p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.footer-subscription input {
+    margin: 5px;
+    padding: 10px;
+    width: 250px;
+}
+
+.footer-subscription button {
+    padding: 10px 20px;
+    background-color: #000; /* Color de fondo negro */
+    color: #fff; /* Letras blancas */
+    border: 2px solid #000; /* Bordes negros */
+    cursor: pointer;
+    font-weight: bold; /* Negritas */
+}
+
+.footer-subscription button:hover {
+    background-color: #444; /* Color al hacer hover */
+}
+
+#mensaje {
+    color: rgb(157, 56, 177);
+    margin-top: 10px;
+}
+
+/* Estilo para hacer los campos de nombre y correo más largos */
+#nombre, #email {
+    width: 300px; /* Aumenta el ancho de los campos */
+    padding: 10px; /* Espaciado interno para que el texto no esté pegado a los bordes */
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Color y grosor del borde */
+    margin-bottom: 10px; /* Espacio entre los campos */
+}
+
+/* Estilo para el botón de Registrar */
+#btnRegistrar {
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno para que el botón sea más grande */
+    font-size: 16px; /* Tamaño del texto */
+    border: 3px solid #000000; /* Bordes más gruesos de color negro */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+#btnRegistrar:hover {
+    background-color: #ffffff; /* Cambia el fondo a blanco */
+    color: #000000; /* Cambia el texto a negro */
+    border: 5px solid #000000; /* Mantiene el borde negro */
+}
+
+/* Estilos para el modo oscuro */
+body.oscuro {
+    background-color: #121212; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+}
+
+/* Otros estilos que cambian en modo oscuro */
+.oscuro header {
+    background: url(img/original.jpg); /* Cambia el fondo del header en modo oscuro */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}
+
+.oscuro h2 {
+    color: rgb(214, 83, 83); /* Si quieres definir otros estilos por defecto en modo oscuro */
+}
+#modoOscuro {
+    background-color: #6a2c2c; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    padding: 12px 30px; /* Padding para un tamaño cómodo */
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negritas */
+    border: 2px solid #984c4c; /* Borde del mismo color que el fondo */
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de transición */
+    margin-top: 20px; /* Espacio adicional arriba del botón */
+}
+
+#modoOscuro:hover {
+    background-color: #333333; /* Cambio a color oscuro al hacer hover */
+    color: #ffffff; /* Texto en blanco en hover */
+    transform: scale(1.05); /* Agranda ligeramente el botón al pasar el mouse */
+}
+
+
+.carrusel {
+    position: relative;
+    max-width: 800px; /* Ajusta según el tamaño deseado */
+    margin: auto;
+    overflow: hidden; /* Oculta las imágenes que no están activas */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease; /* Transición suave */
+}
+
+.slide {
+    display: flex; /* Flex para mostrar secciones en fila */
+    justify-content: space-between; /* Espacio entre las secciones */
+    min-width: 100%; /* Cada slide ocupa el 100% del carrusel */
+    box-sizing: border-box;
+    text-align: center; /* Centrar el texto */
+}
+
+.seccion {
+    width: 48%; /* Cada sección ocupa aproximadamente la mitad del contenedor */
+}
+
+.seccion img {
+    width: 100%; /* Ajustar la imagen al tamaño del contenedor */
+    height: auto; /* Mantener proporciones */
+}
+
+.seccion p {
+    font-size: 2.0em; /* Cambia el tamaño de la letra aquí */
+    margin-top: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev {
+    left: 10px; /* Posiciona a la izquierda */
+}
+
+.next {
+    right: 10px; /* Posiciona a la derecha */
+}
+
